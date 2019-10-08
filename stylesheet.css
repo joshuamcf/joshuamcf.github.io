@@ -11,6 +11,9 @@ p {
   font-family: 'Amiri', serif;
 }
 
-code {
+body code, 
+body kbd, 
+body pre, 
+body samp {
   font-family: 'PT Mono', monospace;
 }
