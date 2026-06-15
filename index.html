@@ -1,61 +1,632 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Code Nippets | SAI Global</title>
-  <meta name="author" content="name">
-  <meta name="description" content="description here">
-  <meta name="keywords" content="keywords,here">
-  <link href="https://fonts.googleapis.com/css?family=Amiri|PT+Mono|Raleway&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="stylesheet.css" type="text/css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  </head>
-  <body>
-    <div class="container">
-    <h1>Code Snippets</h1>
-    <h2 class="text-muted">SAI Global code snippets</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tortor consequat id porta nibh venenatis cras sed felis eget. Sodales neque sodales ut etiam sit amet. Porttitor lacus luctus accumsan tortor posuere. Ipsum dolor sit amet consectetur adipiscing. Augue ut lectus arcu bibendum at. Rhoncus urna neque viverra justo nec ultrices dui sapien. Mauris ultrices eros in cursus turpis massa tincidunt dui ut. Euismod lacinia at quis risus sed vulputate odio. Condimentum lacinia quis vel eros donec ac odio tempor. Cursus metus aliquam eleifend mi. Libero nunc consequat interdum varius sit amet mattis vulputate. Dui accumsan sit amet nulla facilisi morbi tempus iaculis urna. Est velit egestas dui id ornare arcu. Cras sed felis eget velit aliquet sagittis id consectetur. Scelerisque in dictum non consectetur.
-    <code>
-//This script will hide any card in the Stages of Training panel. Just comment out any lines to allow the card to show.
-
-$( document ).ready(function() {
-    
-    var url_href = window.location.href
-
-    if (url_href.indexOf('/training_courses/food_safety_training_courses_-_online_and_classroom/') > 0) {
-        $('#understandCard').fadeIn(600); //shows the understand card
-        $('#implementCard').fadeIn(800); //shows the Implement card
-        $('#assessCard').fadeIn(1000); //shows the Assess card
-        $('#improveCard').fadeIn(1200); //shows the Improve card
-        $('#stagesSection').fadeIn(500); //shows entire stages section
-    } else if (url_href.indexOf('/en-gb/training_courses/auditing') > 0) {
-        $('#internalAuditorCard').fadeIn(600); //shows the Internal Auditor card
-        $('#leadAuditorCard').fadeIn(800); //shows the Lead Auditor card
-        //$('#managementSystemsAuditorCard').fadeIn(1000); //shows the Management Systems Auditor card
-        $('#thirdPartyAuditorCard').fadeIn(1000); //shows the Third Party Auditor card
-        $('#auditorTransitionCard').fadeIn(1200); //shows the Auditor Transition card
-        $('#stagesSection').fadeIn(500); //shows entire stages section
-    } else if ((url_href.indexOf('/en-au/training_courses/auditing') || url_href.indexOf('/en-us/training_courses/auditing')) > 0) {
-        $('#internalAuditorCard').fadeIn(600); //shows the Internal Auditor card
-        $('#leadAuditorCard').fadeIn(800); //shows the Lead Auditor card
-        $('#managementSystemsAuditorCard').fadeIn(1000); //shows the Management Systems Auditor card
-        //$('#thirdPartyAuditorCard').fadeIn(1000); //shows the Third Party Auditor card
-        $('#auditorTransitionCard').fadeIn(1200); //shows the Auditor Transition card
-        $('#stagesSection').fadeIn(500); //shows entire stages section
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Joshua McFarlane</title>
+  <meta name="description" content="Personal homepage for Joshua McFarlane — web producer, WordPress developer, systems tinkerer, and cyclist based in Sydney.">
+  <meta property="og:title" content="Joshua McFarlane">
+  <meta property="og:description" content="Web producer, WordPress developer, local AI tinkerer, and cyclist in Sydney.">
+  <meta property="og:type" content="website">
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&f[]=boska@500,700&display=swap" rel="stylesheet">
+  <style>
+    :root, [data-theme="light"] {
+      --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+      --text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+      --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+      --text-lg: clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
+      --text-xl: clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
+      --text-2xl: clamp(2rem, 1.2rem + 2.5vw, 3.5rem);
+      --space-1: 0.25rem;
+      --space-2: 0.5rem;
+      --space-3: 0.75rem;
+      --space-4: 1rem;
+      --space-5: 1.25rem;
+      --space-6: 1.5rem;
+      --space-8: 2rem;
+      --space-10: 2.5rem;
+      --space-12: 3rem;
+      --space-16: 4rem;
+      --space-20: 5rem;
+      --space-24: 6rem;
+      --color-bg: #f7f6f2;
+      --color-surface: #f9f8f5;
+      --color-surface-2: #fbfbf9;
+      --color-surface-offset: #edeae5;
+      --color-border: rgba(40, 37, 29, 0.12);
+      --color-text: #28251d;
+      --color-text-muted: #66645f;
+      --color-text-faint: #8f8c86;
+      --color-primary: #01696f;
+      --color-primary-hover: #0c4e54;
+      --color-primary-highlight: #cedcd8;
+      --color-card-accent: rgba(1, 105, 111, 0.08);
+      --shadow-sm: 0 1px 2px rgba(30, 24, 14, 0.06);
+      --shadow-md: 0 12px 32px rgba(30, 24, 14, 0.08);
+      --radius-sm: 0.5rem;
+      --radius-md: 0.9rem;
+      --radius-lg: 1.4rem;
+      --radius-full: 9999px;
+      --font-body: 'Satoshi', Inter, sans-serif;
+      --font-display: 'Boska', Georgia, serif;
+      --content: 1100px;
     }
-});
 
-</code>
-    </p>
+    [data-theme="dark"] {
+      --color-bg: #171614;
+      --color-surface: #1c1b19;
+      --color-surface-2: #201f1d;
+      --color-surface-offset: #252320;
+      --color-border: rgba(205, 204, 202, 0.14);
+      --color-text: #e5e2dc;
+      --color-text-muted: #b3afa8;
+      --color-text-faint: #8c8881;
+      --color-primary: #4f98a3;
+      --color-primary-hover: #69adb7;
+      --color-primary-highlight: rgba(79, 152, 163, 0.18);
+      --color-card-accent: rgba(79, 152, 163, 0.10);
+      --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.22);
+      --shadow-md: 0 16px 40px rgba(0, 0, 0, 0.25);
+    }
 
-<p>Sollicitudin ac orci phasellus egestas tellus. Gravida rutrum quisque non tellus. Auctor urna nunc id cursus. Volutpat est velit egestas dui id ornare. Faucibus nisl tincidunt eget nullam non. Facilisi cras fermentum odio eu feugiat pretium nibh. Nunc non blandit massa enim nec. In ornare quam viverra orci. Enim nec dui nunc mattis enim ut tellus elementum sagittis. Pretium aenean pharetra magna ac placerat vestibulum. Amet porttitor eget dolor morbi non arcu risus. Morbi tristique senectus et netus et malesuada fames ac.</p>
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --color-bg: #171614;
+        --color-surface: #1c1b19;
+        --color-surface-2: #201f1d;
+        --color-surface-offset: #252320;
+        --color-border: rgba(205, 204, 202, 0.14);
+        --color-text: #e5e2dc;
+        --color-text-muted: #b3afa8;
+        --color-text-faint: #8c8881;
+        --color-primary: #4f98a3;
+        --color-primary-hover: #69adb7;
+        --color-primary-highlight: rgba(79, 152, 163, 0.18);
+        --color-card-accent: rgba(79, 152, 163, 0.10);
+        --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.22);
+        --shadow-md: 0 16px 40px rgba(0, 0, 0, 0.25);
+      }
+    }
 
-<p>Gravida rutrum quisque non tellus orci ac auctor augue. Risus at ultrices mi tempus imperdiet nulla malesuada pellentesque elit. Vestibulum lectus mauris ultrices eros in cursus turpis massa tincidunt. Commodo quis imperdiet massa tincidunt nunc pulvinar sapien et ligula. Ipsum dolor sit amet consectetur. Nibh cras pulvinar mattis nunc sed blandit libero volutpat sed. Lorem ipsum dolor sit amet consectetur adipiscing. Pellentesque elit ullamcorper dignissim cras tincidunt. Sed id semper risus in hendrerit gravida rutrum quisque. Gravida quis blandit turpis cursus in hac habitasse platea. Donec massa sapien faucibus et molestie ac feugiat sed. Non quam lacus suspendisse faucibus interdum posuere lorem ipsum dolor. Aliquam id diam maecenas ultricies mi eget mauris pharetra. Quis risus sed vulputate odio ut enim blandit. Pellentesque pulvinar pellentesque habitant morbi tristique.</p>
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: var(--font-body);
+      font-size: var(--text-base);
+      line-height: 1.6;
+      color: var(--color-text);
+      background:
+        radial-gradient(circle at top right, var(--color-primary-highlight), transparent 28%),
+        linear-gradient(180deg, var(--color-bg), var(--color-surface));
+    }
+    a { color: inherit; text-decoration: none; }
+    img, svg { display: block; max-width: 100%; }
+    button { font: inherit; }
+    :focus-visible {
+      outline: 2px solid var(--color-primary);
+      outline-offset: 3px;
+      border-radius: var(--radius-sm);
+    }
+    .skip-link {
+      position: absolute;
+      left: var(--space-4);
+      top: -3rem;
+      background: var(--color-text);
+      color: var(--color-bg);
+      padding: var(--space-2) var(--space-3);
+      border-radius: var(--radius-sm);
+      z-index: 100;
+    }
+    .skip-link:focus { top: var(--space-4); }
+    .container {
+      width: min(calc(100% - 2rem), var(--content));
+      margin: 0 auto;
+    }
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(12px);
+      background: color-mix(in srgb, var(--color-bg) 82%, transparent);
+      border-bottom: 1px solid transparent;
+    }
+    .site-header.scrolled { border-color: var(--color-border); }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-4);
+      min-height: 4.5rem;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-3);
+      font-size: var(--text-sm);
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+    .brand-mark {
+      width: 2.4rem;
+      height: 2.4rem;
+      padding: 0.45rem;
+      border-radius: 50%;
+      background: var(--color-surface-2);
+      border: 1px solid var(--color-border);
+      color: var(--color-primary);
+      box-shadow: var(--shadow-sm);
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: var(--space-4);
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+    }
+    .nav-links a:hover { color: var(--color-text); }
+    .theme-toggle {
+      min-width: 44px;
+      min-height: 44px;
+      border-radius: var(--radius-full);
+      border: 1px solid var(--color-border);
+      background: var(--color-surface-2);
+      color: var(--color-text);
+      display: inline-grid;
+      place-items: center;
+    }
+    main { padding-bottom: var(--space-20); }
+    .hero {
+      padding: clamp(var(--space-12), 10vw, var(--space-24)) 0 var(--space-12);
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: var(--space-8);
+      align-items: end;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      padding: 0.45rem 0.85rem;
+      margin-bottom: var(--space-5);
+      border-radius: var(--radius-full);
+      background: var(--color-primary-highlight);
+      color: var(--color-primary);
+      font-size: var(--text-xs);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    h1 {
+      margin: 0;
+      font-family: var(--font-display);
+      font-size: clamp(2.8rem, 6vw, 5.5rem);
+      line-height: 0.95;
+      letter-spacing: -0.03em;
+      max-width: 10ch;
+    }
+    .hero p {
+      margin: var(--space-5) 0 0;
+      max-width: 58ch;
+      color: var(--color-text-muted);
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-3);
+      margin-top: var(--space-6);
+    }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0.9rem 1.2rem;
+      border-radius: var(--radius-full);
+      border: 1px solid var(--color-border);
+      font-size: var(--text-sm);
+      font-weight: 700;
+    }
+    .button.primary {
+      background: var(--color-primary);
+      color: #f7f6f2;
+      border-color: transparent;
+    }
+    .button.primary:hover { background: var(--color-primary-hover); }
+    .button.secondary {
+      background: var(--color-surface-2);
+    }
+    .hero-card {
+      padding: var(--space-6);
+      background: color-mix(in srgb, var(--color-surface-2) 86%, var(--color-card-accent));
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+    }
+    .hero-card h2,
+    .section-heading h2 {
+      margin: 0 0 var(--space-3);
+      font-size: var(--text-lg);
+      line-height: 1.15;
+    }
+    .meta-list {
+      display: grid;
+      gap: var(--space-4);
+      margin-top: var(--space-5);
+    }
+    .meta-item small,
+    .stack small {
+      display: block;
+      margin-bottom: 0.25rem;
+      color: var(--color-text-faint);
+      font-size: var(--text-xs);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .meta-item strong,
+    .stack strong {
+      font-size: var(--text-base);
+    }
+    section {
+      padding-top: clamp(var(--space-10), 7vw, var(--space-16));
+    }
+    .section-heading {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: var(--space-6);
+      margin-bottom: var(--space-6);
+      align-items: end;
+    }
+    .section-heading p {
+      margin: 0;
+      color: var(--color-text-muted);
+    }
+    .grid {
+      display: grid;
+      gap: var(--space-4);
+    }
+    .cards-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .cards-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .panel {
+      padding: var(--space-5);
+      background: var(--color-surface-2);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+    }
+    .panel.featured {
+      background: linear-gradient(180deg, color-mix(in srgb, var(--color-surface-2) 88%, var(--color-card-accent)), var(--color-surface));
+    }
+    .panel h3 {
+      margin: 0 0 var(--space-2);
+      font-size: var(--text-lg);
+    }
+    .panel p,
+    .panel li {
+      color: var(--color-text-muted);
+      font-size: var(--text-sm);
+    }
+    .chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2);
+      margin-top: var(--space-4);
+    }
+    .chip {
+      padding: 0.45rem 0.8rem;
+      border-radius: var(--radius-full);
+      background: var(--color-primary-highlight);
+      color: var(--color-primary);
+      font-size: var(--text-xs);
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+    ul.clean {
+      list-style: none;
+      padding: 0;
+      margin: var(--space-4) 0 0;
+      display: grid;
+      gap: var(--space-3);
+    }
+    .timeline {
+      display: grid;
+      gap: var(--space-4);
+    }
+    .timeline article {
+      padding: var(--space-5);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      background: var(--color-surface);
+    }
+    .timeline time {
+      display: inline-block;
+      margin-bottom: var(--space-2);
+      color: var(--color-text-faint);
+      font-size: var(--text-xs);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .timeline h3 { margin: 0 0 var(--space-2); font-size: var(--text-base); }
+    .cta {
+      margin-top: clamp(var(--space-12), 8vw, var(--space-20));
+      padding: clamp(var(--space-8), 6vw, var(--space-12));
+      background: linear-gradient(135deg, var(--color-surface-2), color-mix(in srgb, var(--color-surface) 70%, var(--color-card-accent)));
+      border: 1px solid var(--color-border);
+      border-radius: calc(var(--radius-lg) + 0.4rem);
+      box-shadow: var(--shadow-md);
+    }
+    .cta-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: var(--space-6);
+      align-items: end;
+    }
+    .cta h2 {
+      margin: 0;
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      line-height: 1;
+      letter-spacing: -0.03em;
+      max-width: 12ch;
+    }
+    .cta p { color: var(--color-text-muted); }
+    footer {
+      padding: var(--space-8) 0 var(--space-12);
+      color: var(--color-text-faint);
+      font-size: var(--text-sm);
+    }
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: var(--space-4);
+      border-top: 1px solid var(--color-border);
+      padding-top: var(--space-5);
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 860px) {
+      .hero-grid,
+      .section-heading,
+      .cards-3,
+      .cards-2,
+      .cta-grid { grid-template-columns: 1fr; }
+      .nav { align-items: flex-start; padding: var(--space-3) 0; }
+      .nav-links { flex-wrap: wrap; justify-content: flex-end; }
+      h1 { max-width: 12ch; }
+    }
+
+    @media (max-width: 560px) {
+      .container { width: min(calc(100% - 1.25rem), var(--content)); }
+      .nav { flex-direction: column; }
+      .nav-links { width: 100%; justify-content: space-between; gap: var(--space-3); }
+      .hero-actions { flex-direction: column; }
+      .button { width: 100%; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+  <header class="site-header" id="top">
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="Joshua McFarlane home">
+        <svg class="brand-mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <path d="M11 15.5C11 12.462 13.462 10 16.5 10H20V26.5C20 31.747 15.747 36 10.5 36H10V30H10.5C12.433 30 14 28.433 14 26.5V16H16.5C17.328 16 18 15.328 18 14.5C18 13.672 17.328 13 16.5 13C15.672 13 15 13.672 15 14.5H11Z" fill="currentColor"/>
+          <path d="M27 11H33.5C38.194 11 42 14.806 42 19.5V37H36V19.5C36 18.12 34.88 17 33.5 17H33V37H27V11Z" fill="currentColor" opacity="0.9"/>
+        </svg>
+        <span>Joshua McFarlane</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#work">Work</a>
+        <a href="#stack">Stack</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch color mode">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="content">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Sydney · web producer · builder</span>
+          <h1>Web systems, practical design, and curious side projects.</h1>
+          <p>I’m Joshua — a Sydney-based web producer who works across WordPress development, front-end implementation, site maintenance, AI tooling, smart home tinkering, and cycling-flavoured projects. This page is designed to feel like a clean front door: technical, human, and easy to extend later into a fuller portfolio or notes site.</p>
+          <div class="hero-actions">
+            <a class="button primary" href="mailto:hello@joshuamcf.com">Email me</a>
+            <a class="button secondary" href="#projects">See current focus</a>
+          </div>
+        </div>
+        <aside class="hero-card" aria-label="Profile summary">
+          <h2>Current orbit</h2>
+          <p>Balancing production web work with hands-on experimentation — from WordPress security and custom builds to local AI setups, browser tools, and bike-industry ideas.</p>
+          <div class="meta-list">
+            <div class="meta-item">
+              <small>Based in</small>
+              <strong>Eastgardens, Sydney</strong>
+            </div>
+            <div class="meta-item">
+              <small>Working in</small>
+              <strong>WordPress, CSS, PHP, JavaScript, hosting, automation</strong>
+            </div>
+            <div class="meta-item">
+              <small>Interested in</small>
+              <strong>Local AI, home automation, cycling, photography, travel</strong>
+            </div>
+          </div>
+        </aside>
       </div>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.5.3/modernizr.min.js" type="text/javascript"></script>
-  </body>
+    </section>
+
+    <section id="work">
+      <div class="container">
+        <div class="section-heading">
+          <h2>What I do</h2>
+          <p>I like work that sits between design clarity and system reliability — the kind that improves how a site feels, performs, and survives real-world maintenance.</p>
+        </div>
+        <div class="grid cards-3">
+          <article class="panel featured">
+            <h3>WordPress architecture</h3>
+            <p>Custom themes, plugin-level problem solving, content structures, and practical site improvements that keep editorial workflows manageable.</p>
+            <div class="chip-row">
+              <span class="chip">Custom post types</span>
+              <span class="chip">Plugin development</span>
+              <span class="chip">Template work</span>
+            </div>
+          </article>
+          <article class="panel">
+            <h3>Front-end implementation</h3>
+            <p>Responsive HTML and CSS, visual debugging, accessibility-minded styling, and polished interfaces without overcomplicating the build.</p>
+            <ul class="clean">
+              <li>Modern CSS and layout systems.</li>
+              <li>UI refinement from screenshots or Figma-like references.</li>
+              <li>Performance-aware page construction.</li>
+            </ul>
+          </article>
+          <article class="panel">
+            <h3>Ops and troubleshooting</h3>
+            <p>Hosting, incidents, crawl and SEO issues, security remediation, router and home-network problem solving, and documenting fixes that stick.</p>
+            <ul class="clean">
+              <li>WPEngine and DreamHost style environments.</li>
+              <li>Site recovery and maintenance clean-up.</li>
+              <li>Search-driven debugging as a workflow.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="stack">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Tools and stack</h2>
+          <p>The toolkit changes, but I usually gravitate toward reliable web platforms, inspectable systems, and tools that help me move faster without hiding the details.</p>
+        </div>
+        <div class="grid cards-2">
+          <article class="panel">
+            <h3>Daily tools</h3>
+            <div class="chip-row">
+              <span class="chip">WordPress</span>
+              <span class="chip">VS Code</span>
+              <span class="chip">Chrome / Zen</span>
+              <span class="chip">macOS</span>
+              <span class="chip">PHP</span>
+              <span class="chip">JavaScript</span>
+              <span class="chip">CSS</span>
+              <span class="chip">HTML</span>
+            </div>
+          </article>
+          <article class="panel">
+            <h3>Current rabbit holes</h3>
+            <div class="timeline">
+              <article>
+                <time>AI</time>
+                <h3>Local models and agent workflows</h3>
+                <p>Testing local inference setups, model integrations, and practical ways AI can slot into web and content workflows.</p>
+              </article>
+              <article>
+                <time>Home</time>
+                <h3>Automation and smart devices</h3>
+                <p>Hue, ZigBee, smart plugs, and the small system tweaks that make home tech less annoying and more useful.</p>
+              </article>
+              <article>
+                <time>Creative</time>
+                <h3>Photography, travel, and video</h3>
+                <p>Documenting trips, editing footage, and building better taste through visual work outside the browser.</p>
+              </article>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Things worth building</h2>
+          <p>This version keeps the homepage simple, but it already points toward the kinds of case studies or notes that could live here next.</p>
+        </div>
+        <div class="grid cards-3">
+          <article class="panel">
+            <h3>Bike industry ideas</h3>
+            <p>Product and builder-style experiences, category structures, and ecommerce-adjacent UX that help people compare and configure clearly.</p>
+          </article>
+          <article class="panel">
+            <h3>Technical field notes</h3>
+            <p>Short write-ups on WordPress fixes, CSS patterns, hosting headaches, and AI experiments — practical notes over polished thought leadership.</p>
+          </article>
+          <article class="panel">
+            <h3>Useful web tools</h3>
+            <p>Browser-first utilities, internal helpers, and small interfaces that solve one problem well instead of pretending to be a startup.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="container" id="contact">
+      <div class="cta">
+        <div class="cta-grid">
+          <div>
+            <h2>Built to be a calm, editable starting point.</h2>
+          </div>
+          <div>
+            <p>You can upload this as your homepage now, then expand it later with project links, a writing section, GitHub profile links, or a proper domain once you decide the site’s next job.</p>
+            <div class="hero-actions">
+              <a class="button primary" href="mailto:hello@joshuamcf.com">Start a conversation</a>
+              <a class="button secondary" href="#top">Back to top</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>Joshua McFarlane</span>
+      <span>Web producer · Sydney · GitHub Pages ready</span>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      const root = document.documentElement;
+      const toggle = document.querySelector('[data-theme-toggle]');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      let theme = prefersDark ? 'dark' : 'light';
+      root.setAttribute('data-theme', theme);
+
+      const icon = () => theme === 'dark'
+        ? '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"></circle><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path></svg>'
+        : '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>';
+      const syncToggle = () => {
+        toggle.innerHTML = icon();
+        toggle.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+      };
+      syncToggle();
+      toggle.addEventListener('click', function () {
+        theme = theme === 'dark' ? 'light' : 'dark';
+        root.setAttribute('data-theme', theme);
+        syncToggle();
+      });
+
+      const header = document.querySelector('.site-header');
+      const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 10);
+      onScroll();
+      window.addEventListener('scroll', onScroll, { passive: true });
+    }());
+  </script>
+</body>
 </html>
